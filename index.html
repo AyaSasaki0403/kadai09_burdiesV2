@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Burdies Questions</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+
+<body>
+    <header>
+        <img src="image/burdies.png" alt="Logo" id="logo">
+        <nav>
+            <ul>
+                <li><a href="#about">Burdiesとは</a></li>
+                <!-- <li><a href="#become">Burdyになる</a></li> -->
+                <li><a href="#register">「好き」を登録する</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class = "exp-container">
+        <div class = "exp">
+            <p id = "first">現地にいるあなたと好みが似ているBurdy（バーディ）が、旅先にあるあなたの好みの飲食店やショップを教えてくれます。</p><br>
+            <p id = "second">よりあなたの好み合った飲食店やショップを紹介してもらうためには、ありとあらゆるあなたの「好き」をBurdiesに教えてください。好きな本や映画など、あなたの日常の好きを投稿すればするほど、Buridiesの精度が上がっていきます！</p><br>
+            <p id = "third">Buridiesが紹介する飲食店やショップは、広告費などを払って優先的に表示してもらうことができません。そのため、全てのオススメ飲食店やショップは、純粋にBurdiesの「好き」が集まったお店です。</p><br>
+            <p id = "forth">※Burdiesにインセンティブを払って投稿などを促す行為を行なった飲食店やショップは、オススメのリストから外されるようなど、厳しいペナルティが課されます。</p>
+        </div>
+
+    <img src="image/map.png" alt="map" id="map">
+    </div>
+
+    <div id = "question">あなたの「好き」を教えてください。</div>
+
+    <div class = "question-container">
+
+    <form id="surveyForm" action="index.php" method="post">
+        <div class = "question active" id = "question1">
+           <div id ="food">好きな食事のカテゴリーを全てお選びください。</div>
+                <input type="checkbox" name="food[]" value ="日本食">日本食<br>
+                <input type="checkbox" name="food[]" value ="中華">中華<br>
+                <input type="checkbox" name="food[]" value ="韓国料理">韓国料理<br>
+                <input type="checkbox" name="food[]" value ="その他アジアン料理">その他アジアン料理<br>
+                <input type="checkbox" name="food[]" value ="イタリアン">イタリアン<br>
+                <input type="checkbox" name="food[]" value ="フレンチ">フレンチ<br>
+                <input type="checkbox" name="food[]" value ="メキシコ料理">メキシコ料理<br>
+                <input type="checkbox" name="food[]" value ="その他">その他
+                <input type="text" name="other_food" placeholder="具体的にご記入ください" id="oa1"><br><br>
+            <div class="button-container">
+                <button type="button" onclick="nextQuestion()" id="send">次へ</button>
+            </div>
+        </div>
+
+        <div class = "question active" id = "question2">
+            <div id ="drink">好きな飲み物のカテゴリーを全てお選びください。</div>
+                <input type="checkbox" name="drink[]" value ="ビール">ビール<br>
+                <input type="checkbox" name="drink[]" value ="日本酒">日本酒<br>
+                <input type="checkbox" name="drink[]" value ="焼酎">焼酎<br>
+                <input type="checkbox" name="drink[]" value ="ウィスキー">ウィスキー<br>
+                <input type="checkbox" name="drink[]" value ="サワー">サワー<br>
+                <input type="checkbox" name="drink[]" value ="カクテル">カクテル<br>
+                <input type="checkbox" name="drink[]" value ="その他ハードリカー">その他ハードリカー
+                <input type="text" name="other_food" placeholder="具体的にご記入ください" id="oa2"><br>
+                <input type="checkbox" name="drink[]" value ="others">その他
+                <input type="text" name="other_drink" placeholder="具体的にご記入ください" id="oa3"><br><br>
+            <div class="button-container">
+                <button type="button" onclick="prevQuestion()" id = "back">戻る</button>
+                <button type="button" onclick="nextQuestion()" id="send">次へ</button>
+            </div>
+        </div>
+
+        <div class = "question active" id = "question3">
+            <div id ="who">普段飲食店で食事をする相手として、当てはまる人を全てお選びください。</div>
+                <input type="checkbox" name="who[]" value ="友人・知人">友人・知人<br>
+                <input type="checkbox" name="who[]" value ="仕事仲間">仕事仲間<br>
+                <input type="checkbox" name="who[]" value ="クライアント・お客様">クライアント・お客様<br>
+                <input type="checkbox" name="who[]" value ="趣味仲間">趣味仲間<br>
+                <input type="checkbox" name="who[]" value ="家族">家族<br>
+                <input type="checkbox" name="who[]" value ="彼氏・彼女">彼氏・彼女<br>
+                <input type="checkbox" name="who[]" value ="一人">一人<br>
+                <input type="checkbox" name="who[]" value ="その他">その他
+                <input type="text" name="other_who" placeholder="具体的にご記入ください" id="oa4"><br><br>
+            <div class="button-container">
+                <button type="button" onclick="prevQuestion()" id = "back">戻る</button>
+                <button type="button" onclick="nextQuestion()" id="send">次へ</button>
+            </div>
+        </div>
+
+        <div class = "question active" id = "question4">
+            <div id ="frequency">外食する頻度として、当てはまるものを1つお選びください。</div>
+                <input type="checkbox" name="frequency[]" value ="1週間に2回以上">1週間に2回以上<br>
+                <input type="checkbox" name="frequency[]" value ="1週間に1回程度">1週間に1回程度<br>
+                <input type="checkbox" name="frequency[]" value ="2〜3週間に1回程度">2〜3週間に1回程度<br>
+                <input type="checkbox" name="frequency[]" value ="1ヶ月に1回程度">1ヶ月に1回程度<br>
+                <input type="checkbox" name="frequency[]" value ="2〜3ヶ月に1回程度">2〜3ヶ月に1回程度<br>
+                <input type="checkbox" name="frequency[]" value ="4〜5ヶ月に1回程度">4〜5ヶ月に1回程度<br>
+                <input type="checkbox" name="frequency[]" value ="半年に1回程度">半年に1回程度<br>
+                <input type="checkbox" name="frequency[]" value ="半年に1回未満">半年に1回未満<br><br>
+            <div class="button-container">
+                <button type="button" onclick="prevQuestion()" id = "back">戻る</button>
+                <button type="button" onclick="nextQuestion()" id="send">次へ</button>
+            </div>
+        </div>
+
+        <div class = "question active" id = "question5">
+            <div id ="importance">飲食店を決める際に気にする点として、当てはまるものを全てお選びください。</div>
+                <input type="checkbox" name="importance[]" value ="価格帯">価格帯<br>
+                <input type="checkbox" name="importance[]" value ="立地">立地<br>
+                <input type="checkbox" name="importance[]" value ="人気度">人気度<br>
+                <input type="checkbox" name="importance[]" value ="お店の雰囲気">お店の雰囲気<br>
+                <input type="checkbox" name="importance[]" value ="料理のおいしさ">料理のおいしさ<br>
+                <input type="checkbox" name="importance[]" value ="ドリンクのおいしさ・評価">ドリンクのおいしさ・評価<br>
+                <input type="checkbox" name="importance[]" value ="食材の鮮度">食材の鮮度<br>
+                <input type="checkbox" name="importance[]" value ="地元の人からの評価">地元の人からの評価<br>
+                <input type="checkbox" name="importance[]" value ="系列店がある・複数店舗を持っている">系列店がある・複数店舗を持っている<br>
+                <input type="checkbox" name="who[]" value ="その他">その他
+                <input type="text" name="other_who" placeholder="具体的にご記入ください" id="oa5"><br><br>
+            <div class="button-container">
+                <button type="button" onclick="prevQuestion()" id = "back">戻る</button>
+                <button type="button" onclick="nextQuestion()" id="send">次へ</button>
+            </div>
+        </div>
+
+        <div class = "question active" id = "question6">
+            <div id ="mind">旅行先などで飲食店を選ぶ時のあなたの心情に、最も近いものを1つお選びください。</div>
+                <input type="checkbox" name="mind[]" value ="地元の人が多く利用しているお店に行きたい">地元の人が多く利用しているお店に行きたい<br>
+                <input type="checkbox" name="mind[]" value ="雑誌などに載っているお店に行きたい">雑誌などに載っているお店に行きたい<br>
+                <input type="checkbox" name="mind[]" value ="スタッフがフレンドリーなお店に行きたい">スタッフがフレンドリーなお店に行きたい<br>
+                <input type="checkbox" name="mind[]" value ="スタッフがきちんと距離感を保ってくれるお店に行きたい">スタッフがきちんと距離感を保ってくれるお店に行きたい<br>
+                <input type="checkbox" name="mind[]" value ="食材にこだわりを持っているお店に行きたい">食材にこだわりを持っているお店に行きたい<br>
+                <input type="checkbox" name="mind[]" value ="インテリアデザインにこだわりを持っているお店に行きたい">インテリアデザインにこだわりを持っているお店に行きたい<br>
+                <input type="checkbox" name="mind[]" value ="その他">その他
+                <input type="text" name="other_who" placeholder="具体的にご記入ください" id="oa6"><br><br>
+            <div class="button-container">
+                <button type="button" onclick="prevQuestion()" id = "back">戻る</button>
+                <button type="submit" onclick="finish()" id="send">登録</button>
+            </div>
+        </div>
+
+        <!-- <div class = "question active" id = "question7">
+            <div id ="space">飲食店の雰囲気に求めるイメージとして、当てはまるものを全てお選びください。</div>
+                <input type="checkbox" name="mind[]" value ="地元の人が多く利用しているお店に行きたい">地元の人が多く利用しているお店に行きたい<br>
+                <input type="checkbox" name="mind[]" value ="雑誌などに載っているお店に行きたい">雑誌などに載っているお店に行きたい<br>
+                <input type="checkbox" name="mind[]" value ="スタッフがフレンドリーなお店に行きたい">スタッフがフレンドリーなお店に行きたい<br>
+                <input type="checkbox" name="mind[]" value ="スタッフがきちんと距離感を保ってくれるお店に行きたい">スタッフがきちんと距離感を保ってくれるお店に行きたい<br>
+                <input type="checkbox" name="mind[]" value ="食材にこだわりを持っているお店に行きたい">食材にこだわりを持っているお店に行きたい<br>
+                <input type="checkbox" name="mind[]" value ="インテリアデザインにこだわりを持っているお店に行きたい">インテリアデザインにこだわりを持っているお店に行きたい<br>
+                <input type="checkbox" name="who[]" value ="その他">その他
+                <input type="text" name="other_who" placeholder="具体的にご記入ください" id="oa"><br><br>
+            <div class="button-container">
+                <button type="button" onclick="prevQuestion()" id = "send">戻る</button>
+                <button type="submit" onclick="finish()"id="submit">登録</button>
+            </div>
+        </div> -->
+    </form>
+
+
+    <div id="favPost">あなたの「お気に入り」を投稿しよう！</div>
+
+    <div class = "favorite-container">
+
+        <form id="favorite" action="insert.php" method="post" enctype="multipart/form-data">
+
+                   <div class="form-group inline">
+                    <label for="visit_date">訪問日</label>
+                    <input type="date" name="visit_date" id="visit_date">
+                </div>
+    
+                <div class="form-group inline">
+                    <label for="place_type">行った場所</label>
+                    <select name="place_type" id="place_type">
+                        <option value="restaurant">飲食店</option>
+                        <option value="shop">ショップ</option>
+                        <option value="sightseeing">観光地</option>
+                    </select>
+                </div>
+    
+                <div class="form-group inline">
+                    <label for="facility_name">場所の名前</label>
+                    <input type="text" name="facility_name" id="facility_name">
+                </div>
+    
+                <div class="form-group inline">
+                    <label for="location">所在地</label>
+                    <input type="text" name="location" id="location">
+                </div>
+
+                <div id="measure_box">項目別満足度</div>
+                <div class="form-group inline">
+                    <label for="slider1">1. 価格</label>
+                    <input type="range" name="slider1" id="slider1" min="0" max="100" step="10">
+                </div>
+                <div class="form-group inline">
+                    <label for="slider2">2. 料理の味付け</label>
+                    <input type="range" name="slider2" id="slider2" min="0" max="100" step="10">
+                </div>
+                <div class="form-group inline">
+                    <label for="slider3">3. 料理の見栄え</label>
+                    <input type="range" name="slider3" id="slider3" min="0" max="100" step="10">
+                </div>
+                <div class="form-group inline">
+                    <label for="slider4">4. 料理のオリジナリティ</label>
+                    <input type="range" name="slider4" id="slider4" min="0" max="100" step="10">
+                </div>
+                <div class="form-group inline">
+                    <label for="slider5">5. ドリンクの味</label>
+                    <input type="range" name="slider5" id="slider5" min="0" max="100" step="10">
+                </div>
+                <div class="form-group inline">
+                    <label for="slider6">6. ドリンクの見栄え</label>
+                    <input type="range" name="slider6" id="slider6" min="0" max="100" step="10">
+                </div>
+                <div class="form-group inline">
+                    <label for="slider7">7. ドリンクのオリジナリティ</label>
+                    <input type="range" name="slider7" id="slider7" min="0" max="100" step="10">
+                </div>
+                <div class="form-group inline">
+                    <label for="slider8">8. 店舗の外観</label>
+                    <input type="range" name="slider8" id="slider8" min="0" max="100" step="10">
+                </div>
+                <div class="form-group inline">
+                    <label for="slider9">9. 店内の雰囲気</label>
+                    <input type="range" name="slider9" id="slider9" min="0" max="100" step="10">
+                </div>
+                <div class="form-group inline">
+                    <label for="slider10">10. スタッフの対応</label>
+                    <input type="range" name="slider10" id="slider10" min="0" max="100" step="10">
+                </div>
+
+                <div class="form-group inline">
+                    <label for="free_text">最も「好き」だった点は？</label>
+                    <input type="text" name="free_text" id="free_text">
+                </div>
+
+                <div class="upload-container">
+                    <label for="imageUpload">「お気に入りシーン」を<br>アップロード</label>
+                    <input type="file" id="imageUpload" name="imageUpload">
+                    <!-- accept="image/*" -->
+                </div>
+                <div id="imagePreview" style="display: none;"></div>
+                </div>
+            
+                <div class="button-container">
+                <button type="submit" id="register">「お気に入り」に登録</button>
+            </div>
+        </form>
+    </div>    
+   
+    <script src="script.js"></script>
+</body>
+</html>
